@@ -1,0 +1,1 @@
+chrome extension to help find something on a page without using native searchbar

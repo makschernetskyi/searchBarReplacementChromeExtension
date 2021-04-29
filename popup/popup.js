@@ -8,7 +8,14 @@
 
 	searchBar.oninput = updateStateSearchText;
 
-	searchBtn.onclick = processClick;
+	searchBtn.onclick = queryTabsAndSendMessage;
+
+	document.onkeyup = event =>{
+		const enterKeyCode = 13;
+		if(event.keyCode === enterKeyCode){
+			queryTabsAndSendMessage();
+		}
+	}
 
 	function updateStateSearchText(){
 		const text = searchBar.value;
@@ -16,7 +23,7 @@
 
 	}
 
-	function processClick(){
+	function queryTabsAndSendMessage(){
 		params ={
 			active: true,
 			currentWindow: true
