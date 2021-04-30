@@ -17,6 +17,8 @@
 		search('https://duckduckgo.com/?q={request}');
 	}else if(href.includes("pornhub")){
 		search('https://rt.pornhub.com/video/search?search={request}');
+	}else if(href.includes("vk.com")){
+		search('https://vk.com/search?c%5Bq%5D={request}');
 	}else{
 		chrome.runtime.onMessage.addListener(alertNotSupported);
 	};
