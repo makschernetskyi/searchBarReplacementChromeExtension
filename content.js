@@ -5,6 +5,17 @@
 		search('https://wordwall.net/community/?query={request}');
 	}else if(href.includes("allegro.pl")){
 		search('https://allegro.pl/listing?string={request}&bmatch=e2101-d3859-c3683-fas-1-4-0429');
+	}else if(href.includes("drive.google")){
+		let userNumber = '';
+		const pos = href.search(/\/u\/\d\//);
+		if(pos!=-1){
+			userNumber = 'u/'
+			for(let i = pos+3, len = href.length; i<len && href[i] != '/'; i++){
+					userNumber+=href[i];
+			}
+			userNumber+='/'
+		}
+		search(`https://drive.google.com/drive/${userNumber}search?q={request}`)
 	}else if(href.includes("google")){
 		search('https://www.google.com/search?q={request}')
 	}else if(href.includes("yahoo")){
